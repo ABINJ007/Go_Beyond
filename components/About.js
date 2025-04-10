@@ -26,7 +26,7 @@ export default function About() {
         </h2>
         <p className={styles.description}>
           At <span className={styles.highlight}>Go Beyond</span>, we believe that education is the key to unlocking endless possibilities. 
-          Whether you're dreaming of studying at a top university, exploring international education, or choosing the right career path, we make it happen!
+          Whether you&apos;re dreaming of studying at a top university, exploring international education, or choosing the right career path, we make it happen!
         </p>
       </div>
     </section>

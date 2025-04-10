@@ -4,7 +4,7 @@ import styles from '../styles/Contact.module.css';
 export default function Contact() {
   return (
     <section className={styles.contact}>
-      <h2 className={styles.title}>Let's Connect</h2>
+      <h2 className={styles.title}>Let&apos;s Connect</h2>
 
       <div className={`${styles.infoItem} ${styles.fadeIn}`} style={{ animationDelay: '0.1s' }}>
         <Phone className={styles.icon} />

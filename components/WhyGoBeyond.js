@@ -62,7 +62,7 @@ export default function WhyGoBeyond() {
           />
           <h3>Career Counseling</h3>
           <p>
-            We're not just about admissions we help you shape a successful future with expert career guidance and support.
+            We&apos;re not just about admissions we help you shape a successful future with expert career guidance and support.
           </p>
         </div>
 
