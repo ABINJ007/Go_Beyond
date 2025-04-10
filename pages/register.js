@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { supabase } from './supabaseClient';
 import styles from '../styles/Register.module.css';
+import Image from 'next/image';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -67,7 +68,7 @@ const Register = () => {
     <div className={styles.registerContainer}>
       <div className={styles.formBox}>
         <div className={styles.imageContainer}>
-          <img className={styles.insideImage} src="/hello2.jpg" alt="Graduation" />
+          <Image className={styles.insideImage} src="/hello2.jpg" alt="Graduation" />
         </div>
 
         <div className={styles.formContent}>

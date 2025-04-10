@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from '../styles/WhyGoBeyond.module.css';
 
 export default function WhyGoBeyond() {
@@ -7,9 +8,12 @@ export default function WhyGoBeyond() {
       <div className={styles.cardsContainer}>
 
         <div className={styles.card}>
-          <img
-            src="markus-winkler-igoytGVfdxw-unsplash.jpg"
+          <Image
+            src="/markus-winkler-igoytGVfdxw-unsplash.jpg"
+            width={500} 
+            height={300} 
             alt="Expert Guidance"
+            layout="responsive"
             className={styles.cardImage}
           />
           <h3>Expert Guidance</h3>
@@ -19,9 +23,12 @@ export default function WhyGoBeyond() {
         </div>
 
         <div className={styles.card}>
-          <img
-            src="dom-fou-YRMWVcdyhmI-unsplash.jpg"
+          <Image
+            src="/dom-fou-YRMWVcdyhmI-unsplash.jpg"
+            width={500} 
+            height={300} 
             alt="Top University Admissions"
+            layout="responsive"
             className={styles.cardImage}
           />
           <h3>Top University Admissions</h3>
@@ -31,9 +38,12 @@ export default function WhyGoBeyond() {
         </div>
 
         <div className={styles.card}>
-          <img
-            src="rodeo-project-management-software--f0SlS5MYnI-unsplash.jpg"
+          <Image
+            src="/rodeo-project-management-software--f0SlS5MYnI-unsplash.jpg"
+            width={500} 
+            height={300} 
             alt="Personalized Support"
+            layout="responsive"
             className={styles.cardImage}
           />
           <h3>Personalized Support</h3>
@@ -43,9 +53,12 @@ export default function WhyGoBeyond() {
         </div>
 
         <div className={styles.card}>
-          <img
-            src="thomas-lefebvre-gp8BLyaTaA0-unsplash.jpg"
+          <Image
+            src="/thomas-lefebvre-gp8BLyaTaA0-unsplash.jpg"
+            width={500} 
+            height={300} 
             alt="Application Process"
+            layout="responsive"
             className={styles.cardImage}
           />
           <h3>Application Process</h3>
@@ -55,9 +68,12 @@ export default function WhyGoBeyond() {
         </div>
 
         <div className={styles.card}>
-          <img
-            src="austin-distel-wD1LRb9OeEo-unsplash.jpg"
+          <Image
+            src="/austin-distel-wD1LRb9OeEo-unsplash.jpg"
+            width={500} 
+            height={300} 
             alt="Career Counseling"
+            layout="responsive"
             className={styles.cardImage}
           />
           <h3>Career Counseling</h3>
