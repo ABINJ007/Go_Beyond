@@ -1,0 +1,88 @@
+.about {
+    position: relative;
+    background: linear-gradient(135deg, #567C8D, #F5EFEB);
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    overflow: hidden;
+  }
+  
+  /* 3D Lighting Effect */
+  .light {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(86, 124, 141, 0.6), transparent);
+    filter: blur(120px);
+    animation: moveLight 6s infinite alternate ease-in-out;
+  }
+  
+  @keyframes moveLight {
+    0% { transform: translate(-50%, -50%); }
+    100% { transform: translate(50%, 50%); }
+  }
+  
+  /* 3D Card */
+  .card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 3rem;
+    border-radius: 20px;
+    max-width: 850px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 
+      0 8px 15px rgba(86, 124, 141, 0.3),
+      0 4px 20px rgba(86, 124, 141, 0.4),
+      inset 0 -4px 8px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform-style: preserve-3d;
+    transform: rotateX(10deg) rotateY(-5deg);
+    animation: floatCard 5s infinite alternate ease-in-out;
+  }
+  
+  /* Floating Effect */
+  @keyframes floatCard {
+    0% { transform: rotateX(8deg) rotateY(-4deg) translateY(0); }
+    100% { transform: rotateX(12deg) rotateY(-6deg) translateY(-10px); }
+  }
+  
+  /* Heading with Depth */
+  .heading {
+    font-size: 3rem;
+    color: #567C8D;
+    font-weight: bold;
+    text-shadow: 0px 4px 10px rgba(86, 124, 141, 0.6);
+  }
+  
+  /* Description */
+  .description {
+    font-size: 1.2rem;
+    color: #2C3E50;
+    line-height: 1.8;
+    font-weight: 500;
+    animation: fadeIn 1.6s ease-in-out;
+  }
+  
+  /* Text Fade-in Effect */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .card {
+      padding: 2rem;
+    }
+  
+    .heading {
+      font-size: 2.5rem;
+    }
+  
+    .description {
+      font-size: 1.1rem;
+    }
+  }
+  
