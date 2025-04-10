@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { supabase } from './supabaseClient';
+import { supabase } from '../lib/supabaseClient';
 import styles from '../styles/Register.module.css';
 import Image from 'next/image';
 
