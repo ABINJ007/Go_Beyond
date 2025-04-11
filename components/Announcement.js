@@ -21,7 +21,7 @@ export default function Announcement() {
     }, 4000); // Change message every 4 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [messages.length]); //  Added dependency
 
   return (
     <section className={styles.announcement}>
