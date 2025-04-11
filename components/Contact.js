@@ -23,7 +23,7 @@ export default function Contact() {
 
       <div className={`${styles.infoItem} ${styles.fadeIn}`} style={{ animationDelay: '0.7s' }}>
         <Instagram className={styles.icon} />
-        <a href="https://instagram.com/GOBEYOND" target="_blank" rel="noopener noreferrer" className={styles.link}>@GOBEYOND</a>
+        <a href="https://instagram.com/gobeyond.in" target="_blank" rel="noopener noreferrer" className={styles.link}>@GOBEYOND</a>
       </div>
     </section>
   );

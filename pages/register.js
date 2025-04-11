@@ -29,8 +29,8 @@ const Register = () => {
       // Insert data into Supabase
       const { data, error } = await supabase.from('registrations').insert([
         {
-          firstname: formData.firstName,
-          lastname: formData.lastName,
+          firstname: formData.firstname,
+          lastname: formData.lastname,
           email: formData.email,
           mobile: formData.mobile,
           destination: formData.destination,
@@ -68,7 +68,14 @@ const Register = () => {
     <div className={styles.registerContainer}>
       <div className={styles.formBox}>
         <div className={styles.imageContainer}>
-          <Image className={styles.insideImage} src="/hello2.jpg" alt="Graduation" />
+          <Image 
+            className={styles.insideImage} 
+            src="/hello2.jpg" 
+            alt="Graduation" 
+            width={500} 
+            height={300} 
+            layout="responsive"
+          />
         </div>
 
         <div className={styles.formContent}>
@@ -78,11 +85,11 @@ const Register = () => {
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
                 <label htmlFor="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} required />
+                <input type="text" id="firstName" name="firstname" value={formData.firstname} onChange={handleChange} required />
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} required />
+                <input type="text" id="lastName" name="lastname" value={formData.lastname} onChange={handleChange} required />
               </div>
             </div>
 
