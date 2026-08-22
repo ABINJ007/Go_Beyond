@@ -1,44 +1,119 @@
 .footer {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
-    padding: 25px 15px;
-    text-align: center;
-    font-size: 1rem;
-    border-radius: 12px 12px 0 0;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1.5s ease-in-out;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--section-padding-x) 1.5rem;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.brandName {
+  font-family: 'Georgia', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.goText {
+  color: var(--color-cream);
+}
+
+.beyondText {
+  color: #ffffff;
+  margin-left: 4px;
+}
+
+.brandDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 320px;
+}
+
+.columnTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-cream);
+}
+
+.linkList,
+.contactList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footerLink {
+  font-size: 0.925rem;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+}
+
+.footerLink:hover {
+  opacity: 1;
+  color: var(--color-cream);
+}
+
+.footerLink:focus-visible {
+  outline: 2px solid var(--color-cream);
+  outline-offset: 2px;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.925rem;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.socialLink:hover {
+  opacity: 1;
+  color: var(--color-cream);
+  transform: translateY(-2px);
+}
+
+.socialLink:focus-visible {
+  outline: 2px solid var(--color-cream);
+  outline-offset: 2px;
+}
+
+.bottom {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-size: 0.875rem;
+  opacity: 0.85;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 2.5rem;
   }
-  
-  .socialIcons {
-    margin-top: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .socialLink:hover {
+    transform: none;
   }
-  
-  .socialIcons a {
-    color: white;
-    margin: 0 8px;
-    font-size: 1.2rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  .socialIcons a:hover {
-    color: #ffca28;
-    transform: scale(1.2);
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+}

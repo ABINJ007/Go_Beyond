@@ -1,0 +1,169 @@
+﻿.section {
+  position: relative;
+  padding: 6rem 1.5rem;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(var(--color-primary) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.03;
+  z-index: 1;
+}
+
+.decorativeCircle1 {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  width: 40vw;
+  height: 40vw;
+  max-width: 500px;
+  max-height: 500px;
+  background: radial-gradient(circle, rgba(86,124,141,0.05) 0%, rgba(86,124,141,0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.decorativeCircle2 {
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 30vw;
+  height: 30vw;
+  max-width: 400px;
+  max-height: 400px;
+  background: radial-gradient(circle, rgba(44,62,80,0.03) 0%, rgba(44,62,80,0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(86, 124, 141, 0.1);
+  border-radius: 2rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(44, 62, 80, 0.05),
+              0 1px 3px rgba(44, 62, 80, 0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardTopAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-dark) 100%);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  padding: 0.6rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(86, 124, 141, 0.1);
+}
+
+.heading {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--color-dark);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.highlight {
+  color: var(--color-primary);
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0.1em;
+  left: -2%;
+  width: 104%;
+  height: 0.3em;
+  background-color: rgba(86, 124, 141, 0.15);
+  z-index: -1;
+  border-radius: 4px;
+  transform: rotate(-1deg);
+}
+
+.description {
+  font-size: clamp(1.125rem, 2.5vw, 1.35rem);
+  color: var(--color-dark);
+  opacity: 0.85;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.visualAccent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  opacity: 0.6;
+}
+
+.visualLine {
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.visualDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-dark);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 8rem 2rem;
+  }
+  
+  .card {
+    padding: 5rem 4rem;
+  }
+}

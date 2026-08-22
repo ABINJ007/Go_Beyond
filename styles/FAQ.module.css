@@ -1,0 +1,134 @@
+.section {
+  background-color: var(--color-cream);
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.item {
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(86, 124, 141, 0.1);
+}
+
+.item:hover {
+  transform: none;
+  box-shadow: var(--shadow-sm);
+  border-color: rgba(86, 124, 141, 0.2);
+}
+
+.itemOpen {
+  border-color: rgba(86, 124, 141, 0.3);
+  box-shadow: var(--shadow-sm);
+}
+
+.questionHeading {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.questionButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.125rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: var(--color-text);
+  transition: background var(--transition-fast);
+}
+
+.questionButton:hover {
+  background: rgba(86, 124, 141, 0.05);
+}
+
+.questionButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.questionText {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(86, 124, 141, 0.1);
+  color: var(--color-primary);
+  transition: background var(--transition-normal), color var(--transition-normal);
+}
+
+.icon {
+  transition: transform var(--transition-normal);
+}
+
+.iconOpen {
+  transform: rotate(135deg); /* Plus to Cross */
+}
+
+.itemOpen .iconWrap {
+  background: var(--color-primary);
+  color: white;
+}
+
+.answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition-normal);
+}
+
+.answerOpen {
+  grid-template-rows: 1fr;
+}
+
+.answerInner {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.answerOpen .answerInner {
+  opacity: 1;
+  transition-delay: 50ms;
+}
+
+.answerInner > p {
+  padding: 0 1.25rem 1.125rem;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  .questionText {
+    font-size: 1.05rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .answer, .answerInner, .iconWrap, .icon {
+    transition: none !important;
+  }
+}

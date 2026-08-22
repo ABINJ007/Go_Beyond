@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Head from 'next/head';
 import { supabase } from '../lib/supabaseClient';
 import styles from '../styles/Register.module.css';
 import Image from 'next/image';
@@ -65,73 +66,81 @@ const Register = () => {
   
 
   return (
-    <div className={styles.registerContainer}>
-      <div className={styles.formBox}>
-        <div className={styles.imageContainer}>
-          <Image 
-            className={styles.insideImage} 
-            src="/hello2.jpg" 
-            alt="Graduation" 
-            width={500} 
-            height={300} 
-            layout="responsive"
-          />
-        </div>
+    <>
+      <Head>
+        <title>Register | Go Beyond</title>
+        <meta name="description" content="Register your interest with Go Beyond and let our team help you navigate your educational journey." />
+        <link rel="canonical" href="https://gobeyond-kohl.vercel.app/register" />
+      </Head>
+      <div className={styles.registerContainer}>
+        <div className={styles.formBox}>
+          <div className={styles.imageContainer}>
+            <Image 
+              className={styles.insideImage} 
+              src="/hello2.jpg" 
+              alt="Graduating students celebrating" 
+              width={500} 
+              height={300} 
+              style={{ width: '100%', height: 'auto' }}
+              priority
+            />
+          </div>
 
-        <div className={styles.formContent}>
-          <h2 className={styles.formTitle}>Let <strong>Our Team</strong> Reach Out To You</h2>
+          <div className={styles.formContent}>
+            <h1 className={styles.formTitle}>Let <strong>Our Team</strong> Reach Out To You</h1>
 
-          <form onSubmit={handleSubmit}>
-            <div className={styles.formRow}>
-              <div className={styles.formGroup}>
-                <label htmlFor="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstname" value={formData.firstname} onChange={handleChange} required />
+            <form onSubmit={handleSubmit}>
+              <div className={styles.formRow}>
+                <div className={styles.formGroup}>
+                  <label htmlFor="firstName">First Name</label>
+                  <input type="text" id="firstName" name="firstname" value={formData.firstname} onChange={handleChange} required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="lastname" value={formData.lastname} onChange={handleChange} required />
+                </div>
               </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastname" value={formData.lastname} onChange={handleChange} required />
-              </div>
-            </div>
 
-            <div className={styles.formRow}>
-              <div className={styles.formGroup}>
-                <label htmlFor="email">Email ID</label>
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+              <div className={styles.formRow}>
+                <div className={styles.formGroup}>
+                  <label htmlFor="email">Email ID</label>
+                  <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="mobile">Mobile Number</label>
+                  <input type="tel" id="mobile" name="mobile" value={formData.mobile} onChange={handleChange} required />
+                </div>
               </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="mobile">Mobile Number</label>
-                <input type="tel" id="mobile" name="mobile" value={formData.mobile} onChange={handleChange} required />
-              </div>
-            </div>
 
-            <div className={styles.formRow}>
-              <div className={styles.formGroup}>
-                <label htmlFor="destination">Your Preferred Study Destination</label>
-                <select id="destination" name="destination" value={formData.destination} onChange={handleChange}>
-                  <option>Select Destination</option>
-                  <option>Bangalore</option>
-                  <option>Chennai</option>
-                  <option>Mysore</option>
-                  <option>Mangalore</option>
-                  <option>Coimbatore</option>
-                </select>
+              <div className={styles.formRow}>
+                <div className={styles.formGroup}>
+                  <label htmlFor="destination">Your Preferred Study Destination</label>
+                  <select id="destination" name="destination" value={formData.destination} onChange={handleChange} required>
+                    <option value="">Select Destination</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Mysore">Mysore</option>
+                    <option value="Mangalore">Mangalore</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                  </select>
+                </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="course">Course</label>
+                  <input type="text" id="course" name="course" value={formData.course} onChange={handleChange} required />
+                </div>
               </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="course">Course</label>
-                <input type="text" id="course" name="course" value={formData.course} onChange={handleChange} required />
+
+              <div className={styles.checkboxGroup}>
+                <input type="checkbox" id="consent" name="consent" checked={formData.consent} onChange={handleChange} required />
+                <label htmlFor="consent">I consent to receiving Calls, WhatsApp, Email, and Google RCS from Go Beyond.</label>
               </div>
-            </div>
 
-            <div className={styles.checkboxGroup}>
-              <input type="checkbox" id="consent" name="consent" checked={formData.consent} onChange={handleChange} required />
-              <label htmlFor="consent">I consent to receiving Calls, WhatsApp, Email, and Google RCS from Go Beyond.</label>
-            </div>
-
-            <button type="submit" className={styles.submitButton}>Submit</button>
-          </form>
+              <button type="submit" className={styles.submitButton}>Submit</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
