@@ -1,89 +1,61 @@
 import Image from 'next/image';
+import Section from './layout/Section';
+import sectionStyles from '../styles/Section.module.css';
 import styles from '../styles/WhyGoBeyond.module.css';
+import { REASONS } from '../lib/content';
+import { useScrollReveal } from '../lib/useScrollReveal';
 
 export default function WhyGoBeyond() {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.05 });
+
   return (
-    <section className={styles.why}>
-      <h2>Why Go Beyond?</h2>
-      <div className={styles.cardsContainer}>
-
-        <div className={styles.card}>
-          <Image
-            src="/markus-winkler-igoytGVfdxw-unsplash.jpg"
-            width={500} 
-            height={300} 
-            alt="Expert Guidance"
-            layout="responsive"
-            className={styles.cardImage}
-          />
-          <h3>Expert Guidance</h3>
-          <p>
-            Our team of experienced educational consultants ensures you make the best academic decisions tailored to your future.
-          </p>
-        </div>
-
-        <div className={styles.card}>
-          <Image
-            src="/dom-fou-YRMWVcdyhmI-unsplash.jpg"
-            width={500} 
-            height={300} 
-            alt="Top University Admissions"
-            layout="responsive"
-            className={styles.cardImage}
-          />
-          <h3>Top University Admissions</h3>
-          <p>
-            We help you secure admission to the best institutions around the globe through personalized strategies and mentorship.
-          </p>
-        </div>
-
-        <div className={styles.card}>
-          <Image
-            src="/rodeo-project-management-software--f0SlS5MYnI-unsplash.jpg"
-            width={500} 
-            height={300} 
-            alt="Personalized Support"
-            layout="responsive"
-            className={styles.cardImage}
-          />
-          <h3>Personalized Support</h3>
-          <p>
-            Every student is unique and so is our approach! We tailor our support to meet your specific academic and career goals.
-          </p>
-        </div>
-
-        <div className={styles.card}>
-          <Image
-            src="/thomas-lefebvre-gp8BLyaTaA0-unsplash.jpg"
-            width={500} 
-            height={300} 
-            alt="Application Process"
-            layout="responsive"
-            className={styles.cardImage}
-          />
-          <h3>Application Process</h3>
-          <p>
-            From documentation to interviews, we simplify the entire process for you with hands on assistance every step of the way.
-          </p>
-        </div>
-
-        <div className={styles.card}>
-          <Image
-            src="/austin-distel-wD1LRb9OeEo-unsplash.jpg"
-            width={500} 
-            height={300} 
-            alt="Career Counseling"
-            layout="responsive"
-            className={styles.cardImage}
-          />
-          <h3>Career Counseling</h3>
-          <p>
-            We&apos;re not just about admissions we help you shape a successful future with expert career guidance and support.
-          </p>
-        </div>
-
+    <Section id="why-us" className={styles.section} ariaLabelledby="why-us-heading">
+      <div className={styles.header}>
+        <span className={sectionStyles.label}>Why Choose Us</span>
+        <h2 id="why-us-heading" className={styles.heading}>
+          Guidance That Goes Beyond
+        </h2>
+        <p className={sectionStyles.description}>
+          We don&apos;t just help you choose a university — we partner with you to shape your entire academic future.
+        </p>
       </div>
-      <p className={styles.tagline}>Go Beyond Your Limits, Go Beyond Your Dreams!</p>
-    </section>
+
+      <div className={styles.features} ref={ref}>
+        {REASONS.map((reason, index) => {
+          const isEven = index % 2 === 0;
+          return (
+            <article 
+              key={reason.title} 
+              className={`${styles.feature} ${isEven ? styles.featureEven : styles.featureOdd} reveal ${isVisible ? 'visible' : ''}`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <div className={styles.textContent}>
+                <span className={styles.number} aria-hidden="true">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h3 className={styles.featureTitle}>{reason.title}</h3>
+                <p className={styles.featureDescription}>{reason.description}</p>
+              </div>
+              
+              <div className={styles.imageContainer}>
+                <div className={styles.imageWrapper}>
+                  <Image
+                    src={reason.image}
+                    alt={reason.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className={styles.featureImage}
+                  />
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className={styles.footer}>
+        <p className={styles.tagline}>Go Beyond Your Limits, Go Beyond Your Dreams!</p>
+      </div>
+    </Section>
   );
 }
