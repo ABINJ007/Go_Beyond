@@ -1,59 +1,118 @@
-.why {
-    padding: 4rem 2rem;
-    background-color: #f9f9f9;
-    text-align: center;
+.section {
+  background-color: var(--color-cream);
+  padding: clamp(4rem, 8vw, 6rem) 0;
+}
+
+.header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.heading {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--color-text);
+  margin: 0.5rem 0 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 6vw, 5rem);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.number {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  opacity: 0.8;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.featureTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-text);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.featureDescription {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.featureImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.feature:hover .featureImage {
+  transform: scale(1.03);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-family: 'Georgia', serif;
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .feature {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
   }
   
-  .why h2 {
-    font-size: 2.5rem;
-    color: #111;
-    margin-bottom: 2.5rem;
+  .featureEven .textContent {
+    order: 1;
+  }
+  .featureEven .imageContainer {
+    order: 2;
   }
   
-  .cardsContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  .featureOdd .textContent {
+    order: 2;
   }
-  
-  .card {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .featureOdd .imageContainer {
+    order: 1;
   }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
-  }
-  
-  .cardImage {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-  }
-  
-  .card h3 {
-    font-size: 1.5rem;
-    color: #222;
-    margin-bottom: 0.8rem;
-  }
-  
-  .card p {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  .tagline {
-    margin-top: 3rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #1d3557;
-  }
-  
+}
